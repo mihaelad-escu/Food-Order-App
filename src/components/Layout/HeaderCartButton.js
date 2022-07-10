@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 
-import CartIcon from '../Cart/CartIcon';
 import CartContext from '../../store/cart-context';
 import classes from './HeaderCartButton.module.css';
+import shoppingBasket from '../../assets/shoppingBasket.png';
 
 const HeaderCartButton = (props) => {
   const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
@@ -34,7 +34,7 @@ const HeaderCartButton = (props) => {
   return (
     <button className={btnClasses} onClick={props.onClick}>
       <span className={classes.icon}>
-        <CartIcon />
+        <img src={shoppingBasket} alt='A shopping basket icon' className={classes.icon}/>
       </span>
       <span>Your Cart</span>
       <span className={classes.badge}>{numberOfCartItems}</span>
